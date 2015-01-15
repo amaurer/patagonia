@@ -1,0 +1,76 @@
+<div class="offset2"></div>
+  
+<div class="light-wrapper">
+
+	<div class="container inner bp0">
+		<h1 class="intro text-center">About</h1>
+		<p class="lead main text-center">Patagonia Home  specializes in the art and assembly of exotic wood furniture and stylish upholstery pieces designed for a diverse clientele base all over the world.</p>
+	</div>
+	<!-- /.container -->
+
+	<div class="container inner tp0">
+
+		<div class="col-sm-8">
+			<p>Based in Los Angeles and owned by designer <a href="mailto:ed@patagoniatradingco.com" class="highlight">Edward Guerrero</a>, the boutique company’s unique custom designs encompass a wide range of sought-after styles from classic to modern to “Old Hollywood” and Art Deco pieces that easily fit into any decor.</p>
+
+			<p>Patagonia Trading Company was first started by Edward Guerrero in the late 1990s as a case goods manufacturer specializing in Mahogony and other exotic woods pieces.</p>
+
+			<p class="bold">All of the company’s upholstery pieces are bench made and manufactured on site in Los Angeles, and more and more of its case goods are now also manufactured in the U.S. <span class="highlight">&ndash;a fact the company is extremely proud of.</span></p>
+
+			<p>Appreciated as much for its accommodating, easy-going company attitude as its can-do design savvy, Patagonia Trading Company is dedicated to creating the best possible experience for its family of retailer, designer and architect clients and offers the best customer service and products available. A wide array of sales and marketing tools is available to help its customers grow their business with the Patagonia line. Patagonia Trading Company is committed to delivering top satisfaction in all levels of its business and is devoted to building and nurturing long-term relationships with its clients so that they continue to grow along with the company.</p>
+		</div>
+
+		<div class="col-sm-4">
+			<figure class="icon-overlay"><img src="../public/images/about.png" alt=""></figure>
+			<div class="post-content text-center">
+				<h3 class="post-title">Edward Guerrero <span class="meta">President</span></h3>
+				<p class="tp30 highlight">Patagonia Home is dedicated to creating the best possible experience for its family of retailer, designer and architect clients and offers the best customer service and products available.</p>
+			</div>
+		</div>
+
+	</div>
+
+<h2 style="padding: 1em">Todo: Update map sto point to LA.</h2>
+<div id="map"></div>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1xdEVYy8IZdBKJGQp_QpDWaNQT7ZHGhY&sensor=false&extension=.js"></script> 
+  <script> google.maps.event.addDomListener(window, 'load', init);
+var map;
+function init() {
+    var mapOptions = {
+        center: new google.maps.LatLng(51.211215, 3.226287),
+        zoom: 15,
+        zoomControl: true,
+        zoomControlOptions: {
+            style: google.maps.ZoomControlStyle.DEFAULT,
+        },
+        disableDoubleClickZoom: false,
+        mapTypeControl: true,
+        mapTypeControlOptions: {
+            style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+        },
+        scaleControl: true,
+        scrollwheel: false,
+        streetViewControl: true,
+        draggable : true,
+        overviewMapControl: false,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+		styles: [{stylers:[{saturation:-100},{gamma:1}]},{elementType:"labels.text.stroke",stylers:[{visibility:"off"}]},{featureType:"poi.business",elementType:"labels.text",stylers:[{visibility:"off"}]},{featureType:"poi.business",elementType:"labels.icon",stylers:[{visibility:"off"}]},{featureType:"poi.place_of_worship",elementType:"labels.text",stylers:[{visibility:"off"}]},{featureType:"poi.place_of_worship",elementType:"labels.icon",stylers:[{visibility:"off"}]},{featureType:"road",elementType:"geometry",stylers:[{visibility:"simplified"}]},{featureType:"water",stylers:[{visibility:"on"},{saturation:50},{gamma:0},{hue:"#50a5d1"}]},{featureType:"administrative.neighborhood",elementType:"labels.text.fill",stylers:[{color:"#333333"}]},{featureType:"road.local",elementType:"labels.text",stylers:[{weight:0.5},{color:"#333333"}]},{featureType:"transit.station",elementType:"labels.icon",stylers:[{gamma:1},{saturation:50}]}]
+		}
+
+    var mapElement = document.getElementById('map');
+    var map = new google.maps.Map(mapElement, mapOptions);
+    var locations = [
+        ['Boudewijn Ostenstraat 2', 51.211215, 3.226287]
+    ];
+    for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+            icon: '/public/images/map-pin.png',
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map
+        });
+    }
+}
+</script>
+
+</div>
+<!-- /light-wrapper -->

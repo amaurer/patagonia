@@ -1,0 +1,151 @@
+.highlight {
+    color: #ff8400;
+    font-weight:700;
+}
+.bold {
+    font-weight: 700;
+}
+.progress.plain {
+    background: rgba(228,112,80,0.15);
+}
+.animsition-loading:after,
+#fancybox-loading div,
+.tp-loader.spinner0 {
+    border-left: 3px solid rgba(228,112,80,.15);
+    border-right: 3px solid rgba(228,112,80,.15);
+    border-bottom: 3px solid rgba(228,112,80,.15);
+    border-top: 3px solid rgba(228,112,80,.8);
+}
+a {
+    color: #ff8400;
+}
+.colored {
+    color: #ff8400
+}
+.post-title a:hover {
+    color: #ff8400
+}
+.section-title:before {
+    color: #ff8400;
+}
+.section-title.text-center:after {
+    color: #ff8400;
+}
+.link-out:hover {
+    color: #ff8400
+}
+.black-wrapper a:hover {
+    color: #ff8400
+}
+.color-wrapper {
+    background: #ff8400
+}
+ul.circled li:before {
+    color: #ff8400;
+}
+.footer a:hover {
+    color: #ff8400
+}
+.nav > li > a:hover {
+    background: none;
+    color: #ff8400;
+}
+.nav > li.current > a {
+    background: none;
+    color: #ff8400;
+}
+.navbar .nav .open > a,
+.navbar .nav .open > a:hover,
+.navbar .nav .open > a:focus {
+    background: none;
+    color: #ff8400;
+}
+.navbar .dropdown-menu > li > a:hover,
+.navbar .dropdown-menu > li > a:focus,
+.navbar .dropdown-submenu:hover > a,
+.navbar .dropdown-submenu:focus > a,
+.navbar .dropdown-menu > .active > a,
+.navbar .dropdown-menu > .active > a:hover,
+.navbar .dropdown-menu > .active > a:focus {
+    color: #ff8400;
+}
+.navbar-header .info a:hover {
+    color: #ff8400
+}
+.btn,
+.btn-submit {
+    background: #ff8400;
+}
+.btn:hover,
+.btn:focus,
+.btn:active,
+.btn.active,
+.pagination ul > li > a:hover,
+.pagination ul > li > a:focus,
+.pagination ul > .active > a,
+.pagination ul > .active > span {
+    background: #d76140;
+}
+.services-1 .icon i.icn {
+    color: #ff8400;
+}
+.services-2 i {
+    color: #ff8400;
+}
+.button-group .button:hover,
+.button-group .button:active,
+.button-group .button.is-checked {
+    color: #ff8400
+}
+.meta a:hover,
+.more:hover {
+    color: #ff8400
+}
+.sidebox a:hover {
+    color: #ff8400
+}
+.progress-list li em {
+    color: #ff8400;
+}
+.progress.plain .bar {
+    background: #ff8400;
+}
+.fotorama__thumb-border {
+    border-color: #ff8400
+}
+#comments .info h2 a:hover {
+    color: #ff8400
+}
+#comments a.reply-link:hover {
+    color: #ff8400
+}
+.tabs-top .tab a:hover,
+.tabs-top .tab.active a {
+    color: #ff8400;
+    border-color: #ff8400;
+}
+.panel-title > a:hover {
+    color: #ff8400
+}
+.tooltip-inner {
+    background-color: #ff8400;
+}
+.tooltip.top .tooltip-arrow,
+.tooltip.top-left .tooltip-arrow,
+.tooltip.top-right .tooltip-arrow {
+    border-top-color: #ff8400
+}
+.tooltip.right .tooltip-arrow {
+    border-right-color: #ff8400
+}
+.tooltip.left .tooltip-arrow {
+    border-left-color: #ff8400
+}
+.tooltip.bottom .tooltip-arrow,
+.tooltip.bottom-left .tooltip-arrow,
+.tooltip.bottom-right .tooltip-arrow {
+    border-bottom-color: #ff8400
+}
+.pricing .plan h4 span {
+    color: #ff8400
+}

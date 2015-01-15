@@ -5,8 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var about = require('./routes/about');
+var contact = require('./routes/contact');
+var editorial = require('./routes/editorial');
 
 var app = express();
 
@@ -15,24 +18,34 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
+// app.use(favicon(__dirname + '/public/images/favicon.png'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
+
+app.use("/public", express.static(__dirname + '/public'));
+
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/about', about);
+app.use('/contact', contact);
+app.use('/editorial', editorial);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-    var err = new Error('Not Found');
+    var err = new Error("Page Not Found");
     err.status = 404;
     next(err);
 });
 
 // error handlers
+// 
+// 
+// 
+// 
+// 
 
 // development error handler
 // will print stacktrace
