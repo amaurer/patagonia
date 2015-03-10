@@ -1588,6 +1588,8 @@ blockquote small {
     height: auto;
     padding: 0 10px 10px 0;
 }
+.portfolio { margin-bottom: 3em; }
+.item img { margin: 0 auto; }
 .full-portfolio .isotope .item,
 .full-portfolio .isotope .grid-sizer {
     width: 20%
