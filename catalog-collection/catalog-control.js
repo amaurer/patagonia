@@ -3,7 +3,6 @@
 var fs = require("fs");
 var catalog = {};
 var imagePath = "";
-var walk = require("walk");
 
 
 module.exports = function buildCatalog(imagePath){
