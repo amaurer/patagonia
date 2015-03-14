@@ -491,8 +491,8 @@ if(!window.chrome && typeof document.webkitIsFullScreen != "undefined" || typeof
 	$(".animsition").animsition({
 		inClass               :   'fade-in',
 		outClass              :   'fade-out',
-		inDuration            :    1500,
-		outDuration           :    800,
+		inDuration            :    800,
+		outDuration           :    300,
 		linkElement           :   link, 
 		touchSupport          :   false
 	});

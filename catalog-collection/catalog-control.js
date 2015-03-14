@@ -49,6 +49,7 @@ module.exports = function buildCatalog(imagePath){
 
 	};
 
+	return catalog
 	// Missing Images
 
 	for(n in catalog){
@@ -60,6 +61,5 @@ module.exports = function buildCatalog(imagePath){
 	};
 
 
-	return catalog
 
 }
