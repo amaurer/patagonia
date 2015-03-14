@@ -15,91 +15,30 @@
           <div class="isotope items">
 
 
-          
 <!-- Catalog block, repeat as neccessary -->
+{{#each data}}
 <div class="item grid-sizer web">
 	<figure>
-		<a href="/product" class="fancybox-media" data-rel="grid-portfolio" data-title-id="title-01">
+		<a href="/product/{{../section}}/{{title}}/" class="fancybox-media" data-rel="grid-portfolio" data-title-id="{{title}}">
 			<div class="text-overlay">
-				<div class="info"><span>Title 01</span></div>
+				<div class="info"><span>{{title}}</span></div>
 			</div>
-			<img src="http://placehold.it/600x400" alt="" />
+			{{#if images.[0]}}
+			<img src="/public/catalog/{{images.[0]}}" alt="" />
+			{{/if}}
 		</a>
 	</figure>
 	<!-- Can be removed if not needed, this would be the modal img and content if not linking to a product page. -->
 	<div id="title-02" class="info hidden">
-		<h2>Vulputate Cursus Mollis</h2>
-		<div class="fancybody">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus commodo.</div>
+		<h2>{{title}}</h2>
+		<div class="fancybody">{{description}}</div>
 	</div> 
 	<!-- /modal -->
 </div>
+{{/each}}
 <!-- /block -->
 
 
-
-<!-- Catalog block, repeat as neccessary -->
-<div class="item grid-sizer web">
-	<figure>
-		<a href="/product" class="fancybox-media" data-rel="grid-portfolio" data-title-id="title-02">
-			<div class="text-overlay">
-				<div class="info"><span>Title 02</span></div>
-			</div>
-			<img src="http://placehold.it/600x400" alt="" />
-		</a>
-	</figure>
-	<!-- Can be removed if not needed, this would be the modal img and content if not linking to a product page. -->
-	<div id="title-02" class="info hidden">
-		<h2>Vulputate Cursus Mollis</h2>
-		<div class="fancybody">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus commodo.</div>
-	</div> 
-	<!-- /modal -->
-</div>
-<!-- /block -->
-
-
-
-<!-- Catalog block, repeat as neccessary -->
-<div class="item grid-sizer web">
-	<figure>
-		<a href="/product" class="fancybox-media" data-rel="grid-portfolio" data-title-id="title-03">
-			<div class="text-overlay">
-				<div class="info"><span>Title 03</span></div>
-			</div>
-			<img src="http://placehold.it/600x400" alt="" />
-		</a>
-	</figure>
-	<!-- Can be removed if not needed, this would be the modal img and content if not linking to a product page. -->
-	<div id="title-03" class="info hidden">
-		<h2>Vulputate Cursus Mollis</h2>
-		<div class="fancybody">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus commodo.</div>
-	</div> 
-	<!-- /modal -->
-</div>
-<!-- /block -->
-
-
-
-<!-- Catalog block, repeat as neccessary -->
-<div class="item grid-sizer web">
-	<figure>
-		<a href="/product" class="fancybox-media" data-rel="grid-portfolio" data-title-id="title-04">
-			<div class="text-overlay">
-				<div class="info"><span>Title 04</span></div>
-			</div>
-			<img src="http://placehold.it/600x400" alt="" />
-		</a>
-	</figure>
-	<!-- This would be the modal img and content if not linking to a product page. -->
-	<div id="title-04" class="info hidden">
-		<h2>Vulputate Cursus Mollis</h2>
-		<div class="fancybody">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus commodo.</div>
-	</div> 
-	<!-- /modal -->
-</div>
-<!-- /block -->
-
-
-            
 
           </div>
 

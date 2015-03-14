@@ -1,3 +1,6 @@
+
+global.catalogCollection = require("./catalog-collection/catalog-control")();
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
