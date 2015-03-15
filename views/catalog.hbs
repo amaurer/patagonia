@@ -3,7 +3,7 @@
 <div class="light-wrapper">
 
 	<div class="container inner bp0">
-		<h1 class="intro text-center">{{toUpperCase section}}</h1>
+		<h1 class="intro text-center">{{toUpperCase title}}</h1>
 		<p class="lead main text-center">Patagonia Home specializes in the art and assembly of exotic wood furniture and stylish upholstery pieces designed for a diverse clientele base all over the world.</p>
 	</div>
 	<!-- /.container -->
@@ -19,19 +19,17 @@
 {{#each data}}
 <div class="item grid-sizer web">
 	<figure>
-		<a href="/product/{{../section}}/{{title}}/" class="fancybox-media" data-rel="grid-portfolio" data-title-id="{{title}}">
+		<a href="/products/{{../title}}/{{this}}/" class="fancybox-media" data-rel="grid-portfolio" data-title-id="{{title}}">
 			<div class="text-overlay">
-				<div class="info"><span>{{title}}</span></div>
+				<div class="info"><span>{{toUpperCase this}}</span></div>
 			</div>
-			{{#if images.[0]}}
-			<img src="/public/catalog/{{images.[0]}}" alt="" />
-			{{/if}}
+			<img src="/public/catalog/{{../section}}-{{this}}-sm.jpg" alt="{{this}}" />
 		</a>
 	</figure>
 	<!-- Can be removed if not needed, this would be the modal img and content if not linking to a product page. -->
 	<div id="title-02" class="info hidden">
-		<h2>{{title}}</h2>
-		<div class="fancybody">{{description}}</div>
+		<h2>{{toUpperCase this}}</h2>
+		<!--<div class="fancybody">{{description}}</div>-->
 	</div> 
 	<!-- /modal -->
 </div>
