@@ -3469,6 +3469,7 @@ textarea {
 	}
 }
 @media (min-width: 992px) { 
+
 	.nav.navbar-nav > li:last-of-type > ul {
 	    left: auto;
 	    right: 0;
@@ -3604,7 +3605,12 @@ textarea {
 	}
 }
 @media (max-width: 991px) { 
-	.navbar-brand {
+	.logo {
+        width: 100%;
+        height: auto;
+    }
+
+    .navbar-brand {
 	    position: relative;
 	    -webkit-box-shadow: none;
 	    -moz-box-shadow: none;
@@ -3680,7 +3686,7 @@ textarea {
 	    font-size: 11px !important
 	}
 	.navbar .btn.responsive-menu {
-	    margin: 44px 0
+	    margin:  44px 0 15px 0;
 	}
 	.navbar-header {
 	    float: left;
@@ -3720,7 +3726,7 @@ textarea {
 	    padding: 20px 0;
 	    float: left;
 	    display: inline;
-	    width: auto;
+	    width: 80%;
 	}
 	.centered .navbar-collapse {
 	    background: none
