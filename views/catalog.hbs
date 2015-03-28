@@ -19,17 +19,17 @@
 {{#each data}}
 <div class="item grid-sizer web">
 	<figure>
-		<a href="/products/{{../title}}/{{this}}/" class="fancybox-media" data-rel="grid-portfolio" data-title-id="{{title}}">
+		<a href="/products/{{../title}}/{{@key}}/" class="fancybox-media" data-rel="grid-portfolio" data-title-id="{{title}}">
 			<div class="text-overlay">
-				<div class="info"><span>{{toUpperCase this}}</span></div>
+				<div class="info"><span>{{toUpperCase @key}}</span></div>
 			</div>
-			<img src="/public/catalog/{{../section}}-{{this}}-sm.jpg" alt="{{this}}" />
+			<img src="/public/catalog/{{../section}}-{{@key}}-sm.jpg" alt="{{@key}}" />
 		</a>
 	</figure>
-	<!-- Can be removed if not needed, this would be the modal img and content if not linking to a product page. -->
+	<!-- Can be removed if not needed, @key would be the modal img and content if not linking to a product page. -->
 	<div id="title-02" class="info hidden">
-		<h2>{{toUpperCase this}}</h2>
-		<!--<div class="fancybody">{{description}}</div>-->
+		<h2>{{toUpperCase @key}}</h2>
+		<div class="fancybody">{{@key}}</div>
 	</div> 
 	<!-- /modal -->
 </div>

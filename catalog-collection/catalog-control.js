@@ -7,7 +7,7 @@ var imagePath = "";
 
 module.exports = function buildCatalog(imagePath){
 
-	var n, nn, i, data, fileSplit, root, files, temp;
+	var n, nn, nnn, i, x, data, fileSplit, root, files, temp, catalogIndex;
 	//read this directory, build catalog, loop image directory and assign
 
 	// NEW
@@ -18,13 +18,32 @@ module.exports = function buildCatalog(imagePath){
 		fileSplit = files[i].split(".");
 		if(fileSplit[1] !== "jpg") continue;
 		temp = fileSplit[0].toLowerCase().split("-").splice(0,2);
-		if(catalog[temp[0]] == null) catalog[temp[0]] = [];
-		catalog[temp[0]].push(temp[1]);
+		if(catalog[temp[0]] == null) catalog[temp[0]] = {};
+		catalog[temp[0]][temp[1]] = ""
 	};
 
+	var catalogIndex = JSON.parse(fs.readFileSync("./catalog-collection/catalog-all.json"));
+
+	data = {}
+	// New LOGIC
+	for(n in catalog){
+		// BED
+		for(nn in catalogIndex){
+			// blah chaise : size
+			if(nn.toUpperCase().indexOf(n.toUpperCase()) !== -1){
+				// IF has bed in it
+				for(nnn in catalog[n]){
+					// find names in catalog
+					if(nn.toUpperCase().indexOf(nnn.toUpperCase()) !== -1){
+						catalog[n][nnn] = catalogIndex[nn];
+					}
+				};
+			};
+		};
+
+	};
+	//console.log(catalog)
 	return catalog;
-
-
 
 	// INDEX CATALOG
 	// OLD CATALOG
