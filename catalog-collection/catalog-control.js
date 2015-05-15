@@ -17,7 +17,12 @@ module.exports = function buildCatalog(imagePath){
 		if(files[i].indexOf("-lg.") === -1) continue;
 		fileSplit = files[i].split(".");
 		if(fileSplit[1] !== "jpg") continue;
-		temp = fileSplit[0].toLowerCase().split("-").splice(0,2);
+		temp = fileSplit[0].toLowerCase().split("-")
+		if(temp.length === 4){
+			temp = [temp[0], temp[1] + "-" + temp[2]]
+		} else {
+			temp = temp.splice(0,2);
+		}
 		if(catalog[temp[0]] == null) catalog[temp[0]] = {};
 		catalog[temp[0]][temp[1]] = ""
 	};
