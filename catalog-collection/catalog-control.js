@@ -14,12 +14,20 @@ module.exports = function buildCatalog(imagePath){
 	root = "public/catalog";
 	files = fs.readdirSync(root);
 	for (i = files.length - 1; i >= 0; i--) {
+		// Only read in large images for index (others are dups)
 		if(files[i].indexOf("-lg.") === -1) continue;
+		// Split extension
 		fileSplit = files[i].split(".");
+		// Only read JPGs
 		if(fileSplit[1] !== "jpg") continue;
-		temp = fileSplit[0].toLowerCase().split("-")
+		// Naming Handler
+		temp = fileSplit[0].toLowerCase().split("-");
+		// I know I can write this better.. but it hurts my head
+		// [type, name]
 		if(temp.length === 4){
 			temp = [temp[0], temp[1] + "-" + temp[2]]
+		} else if(temp.length === 5){
+			temp = [temp[0], temp[1] + "-" + temp[2] + "-" + temp[3]]
 		} else {
 			temp = temp.splice(0,2);
 		}
@@ -49,7 +57,7 @@ module.exports = function buildCatalog(imagePath){
 	};
 	//console.log(catalog)
 	return catalog;
-
+/*
 	// INDEX CATALOG
 	// OLD CATALOG
 	root = "catalog-collection";
@@ -103,6 +111,6 @@ module.exports = function buildCatalog(imagePath){
 		};
 	};
 
-
+*/
 
 }

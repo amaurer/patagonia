@@ -10,7 +10,8 @@
 		<div class="row">
 			
 			<div class="item">
-				<img src="/public/catalog/{{section}}-{{product}}-lg.jpg" alt="{{toUpperCase title}}" class="img-responsive">
+				<img src="/public/catalog/{{section}}-{{product}}-{{#if showSmall}}sm{{else}}lg{{/if}}
+				.jpg" alt="{{toUpperCase title}}" class="img-responsive">
 			</div>
 
 		</div>

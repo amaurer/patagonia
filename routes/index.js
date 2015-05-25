@@ -7,31 +7,61 @@ router.get("/", function(req, res) {
 
 router.get("/products/:section/", function(req, res) {
   // Remove plural
-  var temp = req.params.section;
-  if(req.params.section.substr(req.params.section.length-1) === "s"){
-  	temp = req.params.section.substr(0, req.params.section.length -1);
-  };
+  var section = handlePlural(req.params.section);
   res.render("catalog", {
   	//title: req.params.section.substr(0,1).toUpperCase() + req.params.section.substr(1),
   	title: req.params.section,
-  	data : global.catalogCollection[temp],
-  	section : temp
+  	data : global.catalogCollection[section],
+  	section : section,
+    grouping : "products"
+  });
+});
+router.get("/products/:section/:product/", function(req, res) {
+  // Remove plural
+  var section = handlePlural(req.params.section);
+  res.render("product", {
+    title: req.params.product,
+    data : global.catalogCollection[section][req.params.product],
+    section : section,
+    product : req.params.product
   });
 });
 
-router.get("/products/:section/:product/", function(req, res) {
+
+router.get("/upholstery/:section/", function(req, res) {
   // Remove plural
-  var temp = req.params.section;
-  if(req.params.section.substr(req.params.section.length-1) === "s"){
-  	temp = req.params.section.substr(0, req.params.section.length -1);
-  };
-  res.render("product", {
-  	title: req.params.product,
-  	data : global.catalogCollection[temp][req.params.product],
-  	section : temp,
-  	product : req.params.product
+  var section = handlePlural(req.params.section);
+  res.render("catalog", {
+    title: req.params.section,
+    data : global.catalogCollection[section],
+    section : section,
+    grouping : "upholstery"
   });
 });
+router.get("/upholstery/:section/:product/", function(req, res) {
+  // Remove plural
+  var section = handlePlural(req.params.section);
+  res.render("product", {
+    title: req.params.product,
+    data : global.catalogCollection[section][req.params.product],
+    section : section,
+    showSmall : true,
+    product : req.params.product
+  });
+});
+
+
+function handlePlural(phrase){
+  // I know this is crazy....
+  if(phrase.substr(phrase.length-3) === "ses" || phrase.substr(phrase.length-3) === "les"){
+    phrase = phrase.substr(0, phrase.length -1);
+  } else if (phrase.substr(phrase.length-2) === "es"){
+    phrase = phrase.substr(0, phrase.length -2);
+  } else if (phrase.substr(phrase.length-1) === "s"){
+    phrase = phrase.substr(0, phrase.length -1);
+  }
+  return phrase;
+}
 
 /*
 router.get('/beds/', function(req, res) {
