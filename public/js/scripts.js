@@ -129,8 +129,16 @@ $( function() {
 	var $container = $('.full-portfolio .isotope').isotope({
 		itemSelector: '.item',
 		transitionDuration: '0.6s',
+		layoutMode : 'fitRows',
+		sortBy: 'name',
+		sortAscending: true,
 		masonry: {
 			columnWidth: '.grid-sizer'
+		},
+		getSortData: {
+			name: function(elem){
+		      return $(elem).find('.name').text();
+			}
 		}
 	});
 	// bind filter button click
@@ -146,10 +154,10 @@ $( function() {
 			$( this ).addClass('is-checked');
 		});
 	});
-		// layout Isotope again after all images have loaded
-$container.imagesLoaded( function() {
-	$container.isotope('layout');
-});
+	// layout Isotope again after all images have loaded
+	$container.imagesLoaded( function() {
+		$container.isotope('layout');
+	});
 });
 
 $( function() {
@@ -182,45 +190,11 @@ $( function() {
 		});
 	});
 	// layout Isotope again after all images have loaded
-$container.imagesLoaded( function() {
-	$container.isotope('layout');
+	$container.imagesLoaded( function() {
+		$container.isotope('layout');
+	});
 });
-});
-/*-----------------------------------------------------------------------------------*/
-/*	FLICKR
-/*-----------------------------------------------------------------------------------*/
-$(document).ready(function($) {
-		$('.flickr-feed').dcFlickr({
-				limit: 15,
-				q: {
-						id: '51789731@N07',
-						lang: 'en-us',
-						format: 'json',
-						jsoncallback: '?'
-				},
-				onLoad: function() {
-						$('.owl-flickr').owlCarousel({
-		loop:false,
-		margin:10,
-		nav:true,
-		navText: ['<i class="icon-left-open-1"></i>','<i class="icon-right-open-1"></i>'],
-		dots: false,
-		items:7,
-		responsive:{
-				0:{
-						items:3
-				},
-				700:{
-						items:5
-				},
-				1000:{
-						items:7
-				}
-		}
-})
-				}
-		});
-});
+
 /*-----------------------------------------------------------------------------------*/
 /*	IMAGE ICON HOVER
 /*-----------------------------------------------------------------------------------*/
