@@ -7,7 +7,7 @@ var imagePath = "";
 
 module.exports = function buildCatalog(imagePath){
 
-	var n, nn, nnn, i, x, data, fileSplit, root, files, temp, catalogIndex;
+	var n, nn, nnn, i, x, data, fileSplit, root, files, temp, catalogIndex, catName;
 	//read this directory, build catalog, loop image directory and assign
 
 	// NEW
