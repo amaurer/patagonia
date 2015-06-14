@@ -19,7 +19,7 @@ var app = express();
 var hbs = require("hbs");
 hbs.registerPartials(__dirname + "/views/partials");
 hbs.handlebars.registerHelper("toUpperCase", function(str) {
-  return str.toUpperCase().replace(/\_/g, " ");
+  return str.toUpperCase().replace(/\_/g, " ").replace(/\-/g, " ");
 });
 
 

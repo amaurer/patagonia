@@ -31,20 +31,22 @@ router.get("/products/:section/:product/", function(req, res) {
 router.get("/upholstery/:section/", function(req, res) {
   // Remove plural
   var section = handlePlural(req.params.section);
+  var sectionSubName = section.split("-")[section.split("-").length - 1];
   res.render("catalog", {
     title: req.params.section,
-    data : global.catalogCollection[section],
-    section : section,
+    data : global.catalogCollection[sectionSubName],
+    section : sectionSubName,
     grouping : "upholstery"
   });
 });
 router.get("/upholstery/:section/:product/", function(req, res) {
   // Remove plural
   var section = handlePlural(req.params.section);
+  var sectionSubName = section.split("-")[section.split("-").length - 1];
   res.render("product", {
     title: req.params.product,
-    data : global.catalogCollection[section][req.params.product],
-    section : section,
+    data : global.catalogCollection[sectionSubName][req.params.product],
+    section : sectionSubName,
     showSmall : true,
     product : req.params.product
   });
