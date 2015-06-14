@@ -78,7 +78,9 @@ figure {
     padding: 0;
 }
 figure img {
-    height: auto
+    /* height: auto; */
+    height: 167px;
+    width : 234px;
 }
 iframe {
     border: none
