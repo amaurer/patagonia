@@ -1593,6 +1593,7 @@ blockquote small {
 }
 .portfolio { margin-bottom: 3em; }
 .item img { margin: 0 auto; }
+.pad-image img { border :7px solid #fff; }
 .full-portfolio .isotope .item,
 .full-portfolio .isotope .grid-sizer {
     width: 20%

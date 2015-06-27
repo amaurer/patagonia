@@ -36,7 +36,8 @@ router.get("/upholstery/:section/", function(req, res) {
     title: req.params.section,
     data : global.catalogCollection[sectionSubName],
     section : sectionSubName,
-    grouping : "upholstery"
+    grouping : "upholstery",
+    padded : true
   });
 });
 router.get("/upholstery/:section/:product/", function(req, res) {

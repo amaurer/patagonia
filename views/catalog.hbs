@@ -3,7 +3,7 @@
 <div class="light-wrapper">
 
 	<div class="container inner bp0">
-		<h1 class="intro text-center">{{toUpperCase title}}</h1>
+		<!--<h1 class="intro text-center">{{toUpperCase title}}</h1>-->
 		<!--<p class="lead main text-center">Patagonia Home specializes in the art and assembly of exotic wood furniture and stylish upholstery pieces designed for a diverse clientele base all over the world.</p>-->
 	</div>
 	<!-- /.container -->
@@ -15,7 +15,7 @@
 
 			<!-- Catalog block, repeat as neccessary -->
 			{{#each data}}
-			<div class="item grid-sizer web">
+			<div class="item grid-sizer web {{#if ../padded}}pad-image{{/if}}">
 				<figure>
 					<a href="/{{../grouping}}/{{../title}}/{{@key}}/" class="fancybox-media" data-rel="grid-portfolio" data-title-id="{{title}}">
 						<div class="text-overlay">
