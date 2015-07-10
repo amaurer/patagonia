@@ -2,7 +2,7 @@
   "name": "patagonia",
   "version": "0.0.0",
   "engines": {
-    "node": "0.10.35"
+    "node": "0.12.2"
   },
   "private": true,
   "scripts": {
