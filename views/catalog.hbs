@@ -10,18 +10,24 @@
 
 	<div class="container ">
         <div class="portfolio full-portfolio">
+          
+
+		{{#each data}}
           <div class="isotope items">
 
-
 			<!-- Catalog block, repeat as neccessary -->
-			{{#each data}}
-			<div class="item grid-sizer web {{#if ../padded}}pad-image{{/if}}">
+			{{#each this}}
+			<div class="item grid-sizer web pad-image">
 				<figure>
-					<a href="/{{../grouping}}/{{../title}}/{{@key}}/" class="fancybox-media" data-rel="grid-portfolio" data-title-id="{{title}}">
+					<a href="/products/{{parent}}/{{@key}}/" class="fancybox-media" data-rel="grid-portfolio" data-title-id="{{name}}">
 						<div class="text-overlay">
 							<div class="info"><span>{{toUpperCase @key}}</span></div>
 						</div>
-						<img src="/public/catalog/{{../section}}-{{@key}}-sm.jpg" alt="{{@key}}" />
+						{{#if mainImage}}
+						<img src="/public/catalog/{{parent}}/{{mainImage}}" alt="{{@key}}" />
+						{{else}}
+						<img src="/public/catalog/{{parent}}/{{sm}}" alt="{{@key}}" />
+						{{/if}}
 					</a>
 				</figure>
 				<!-- Can be removed if not needed, @key would be the modal img and content if not linking to a product page. -->
@@ -34,8 +40,10 @@
 			{{/each}}
 			<!-- /block -->
 
-
           </div>
+		{{/each}}
+
+
         </div>
     </div><!-- /container -->
 

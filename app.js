@@ -1,5 +1,12 @@
 
-global.catalogCollection = require("./catalog-collection/catalog-control")();
+var IDB = require("image-database")
+var imdb = new IDB("./public/catalog/", function(e, catalog){
+    if(e != null){
+        console.warn(e);
+    } else {
+        require("./catalog-collection/catalog-control")(catalog)
+    }
+})
 
 var express = require("express");
 var path = require("path");
@@ -37,6 +44,10 @@ app.use(cookieParser());
 
 app.use("/public", express.static(__dirname + "/public"));
 
+app.use(function(req, res, next){
+    req.imdb = imdb
+    next()
+})
 
 app.use("/", routes);
 app.use("/about", about);

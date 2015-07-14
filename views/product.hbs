@@ -2,7 +2,7 @@
   
 <div class="light-wrapper">
 
-	<div class="container inner bp0">
+	<div class="container inner bp0 tp0">
 		<h1 class="intro text-right">{{toUpperCase title}}</h1>
 		<!--
 		<p class="lead main text-center">Patagonia Home  specializes in the art and assembly of exotic wood furniture and stylish upholstery pieces designed for a diverse clientele base all over the world.</p> -->
@@ -10,8 +10,7 @@
 		<div class="row">
 			
 			<div class="item">
-				<img src="/public/catalog/{{section}}-{{product}}-{{#if showSmall}}sm{{else}}lg{{/if}}
-				.jpg" alt="{{toUpperCase title}}" class="img-responsive">
+				<img src="/public/catalog/{{data.parent}}/{{#if showSmall}}{{data.md.[0]}}{{else}}{{data.lg.[0]}}{{/if}}" alt="{{title}}" class="img-responsive">
 			</div>
 
 		</div>
@@ -22,7 +21,7 @@
 
 	<div class="container inner tp0">
 
-		<h1 class="post-title">{{toUpperCase data}}</h1>
+		<h1 class="post-title">{{data.desc}}</h1>
 
 <!--
 		<div class="row">
