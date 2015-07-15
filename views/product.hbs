@@ -10,7 +10,33 @@
 		<div class="row">
 			
 			<div class="item">
+
+				<div class="fotorama"
+				data-autoplay="5000"
+				data-keyboard="true"
+				data-arrows="true"
+				data-click="false"
+				data-swipe="true"
+				data-nav="thumbs"
+				data-fit="cover"
+				data-transition="slide"
+				data-thumbwidth="90"
+				data-thumbheight="50">
+				{{#if showSmall}}
+				{{#each ../data.md}}
+					<a href="/public/catalog/{{../data.parent}}/{{this}}"><img src="/public/catalog/{{../data.parent}}/{{this}}" alt="/public/catalog/{{../data.parent}}/{{../data.title}} {{@index}}" /></a> 
+				{{/each}}
+				{{else}}
+				{{#each ../data.lg}}
+					<a href="/public/catalog/{{../data.parent}}/{{this}}"><img src="/public/catalog/{{../data.parent}}/{{this}}" alt="/public/catalog/{{../data.parent}}/{{../data.title}} {{@index}}" /></a> 
+				{{/each}}
+				{{/if}}
+				</div>
+
+		    <!--
 				<img src="/public/catalog/{{data.parent}}/{{#if showSmall}}{{data.md.[0]}}{{else}}{{data.lg.[0]}}{{/if}}" alt="{{title}}" class="img-responsive">
+			-->
+			
 			</div>
 
 		</div>
@@ -43,6 +69,9 @@
 			</div>
 		</div>
 -->
+
+
+
 	</div>
 
 
