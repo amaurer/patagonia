@@ -21,10 +21,14 @@ router.get("/products/:section/", function(req, res) {
   });
 });
 router.get("/products/:section/:product/", function(req, res) {
+  var section = "/public/catalog/" + req.params.section + "/"
+  var data = req.imdb.find(section + req.params.product)
+  var prevNext = getPrevNext(req.imdb, section, req.params.product)
   res.render("product", {
     title: titleCase(req.params.product),
-    data : req.imdb.find("/public/catalog/" + req.params.section + "/" + req.params.product),
-    showSmall : showSmall(req.params.section)
+    data : data,
+    showSmall : showSmall(req.params.section),
+    prevNext : prevNext
   });
 });
 
@@ -37,6 +41,19 @@ function showSmall(section){
       || section.indexOf("nail-heads") !== -1
       || section.indexOf("vinyls") !== -1
   )
+}
+function getPrevNext(imdb, section, product){
+  var data = imdb.find(section)
+  var tempA = []
+  for(var n in data){
+    tempA.push(n)
+  }
+  tempA = tempA.sort()
+  var indexOfProduct = tempA.indexOf(product)
+  return {
+    next : tempA[(indexOfProduct === tempA.length-1)? 0 : indexOfProduct + 1]
+    ,prev : tempA[(indexOfProduct === 0)? tempA.length-1 : indexOfProduct - 1]
+  }
 }
 
 module.exports = router;
