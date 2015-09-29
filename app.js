@@ -1,9 +1,10 @@
 
 var IDB = require("image-database")
-var imdb = new IDB("./public/catalog/", function(e, catalog){
+var imdb = new IDB("./public/catalog/", "_", function(e, catalog){
     if(e != null){
         console.warn(e);
     } else {
+        // console.log(catalog.public.catalog.beds)
         require("./catalog-collection/catalog-control")(catalog)
     }
 })
@@ -26,7 +27,10 @@ var app = express();
 var hbs = require("hbs");
 hbs.registerPartials(__dirname + "/views/partials");
 hbs.handlebars.registerHelper("toUpperCase", function(str) {
-  return str.toUpperCase().replace(/\_/g, " ").replace(/\-/g, " ");
+  return str.toUpperCase().replace(/\_/g, " ").replace(/\-/g, " ").replace(/\|/g, "<br />");
+});
+hbs.handlebars.registerHelper("carriageReturnOnPipe", function(str) {
+  return str.replace(/|/g, "<br>").replace(/\-/g, " ");
 });
 
 
