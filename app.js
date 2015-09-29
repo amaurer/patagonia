@@ -30,7 +30,7 @@ hbs.handlebars.registerHelper("toUpperCase", function(str) {
   return str.toUpperCase().replace(/\_/g, " ").replace(/\-/g, " ").replace(/\|/g, "<br />");
 });
 hbs.handlebars.registerHelper("carriageReturnOnPipe", function(str) {
-  return str.replace(/|/g, "<br>").replace(/\-/g, " ");
+  return str.replace(/\|/g, "<br>").replace(/\-/g, " ");
 });
 
 
