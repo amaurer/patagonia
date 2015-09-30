@@ -24,9 +24,9 @@
 							<div class="info"><span>{{toUpperCase @key}}</span></div>
 						</div>
 						{{#if mainImage}}
-						<img style="object-fit:contain;" src="/public/catalog/{{parent}}/{{mainImage}}" alt="{{@key}}" />
+						<img style="object-fit:{{#if ../../../showSmall}}fill{{else}}contain{{/if}};" src="/public/catalog/{{parent}}/{{mainImage}}" alt="{{@key}}" />
 						{{else}}
-						<img style="object-fit:contain;" src="/public/catalog/{{parent}}/{{sm.[0]}}" alt="{{@key}}" />
+						<img style="object-fit:{{#if ../../../showSmall}}fill{{else}}contain{{/if}};" src="/public/catalog/{{parent}}/{{sm.[0]}}" alt="{{@key}}" />
 						{{/if}}
 					</a>
 				</figure>

@@ -17,7 +17,8 @@ router.get("/products/:section/", function(req, res) {
   res.render("catalog", {
     title: titleCase(data.title),
     data : data,
-    grouping : "products"
+    grouping : "products",
+    showSmall : showSmall(section)
   });
 });
 router.get("/products/:section/:product/", function(req, res) {
@@ -40,6 +41,7 @@ function showSmall(section){
       section.indexOf("finishes") !== -1
       || section.indexOf("nail-heads") !== -1
       || section.indexOf("vinyls") !== -1
+      || section.indexOf("fabrics") !== -1
   )
 }
 function getPrevNext(imdb, section, product){
